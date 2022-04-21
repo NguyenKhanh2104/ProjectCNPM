@@ -6,8 +6,84 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="home.component.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h4>Hello every Body</h4>
+    <nav>
+        <app-header></app-header>
+    </nav>
+    <div id="page">
+      
+      <section class="container">
+        <div class="container ml-4">
+            <div class="row mt-3 content">
+               <div class="col-sm-5">
+                   <div class="row">
+                    <div class="col-sm-12">User </div>
+                    <div class="col-sm-12 mt-2"><p>21-04-2022</p> </div>
+                    <div class="col-sm-12 mt-2 post"> 
+                        <input type="text" placeholder="  Muốn post bài" class="border rounded-pill">
+                    </div>
+                  
+                   </div>
+                   
+                   
+               </div>
+             
+               <div class="row col-sm-6 d-flex align-items-end pb-5"> 
+                   <div class="w-75 pl-5 word-wrap-none">
+                       Kết quả tìm được
+                   </div>
+                   <div class="w-25">  
+                       <select name="" id="">
+                    <option value="">Mới nhất</option>
+                    <option value="">abc</option>
+                </select></div>
+                 
+               </div>
+               <div class="row mt-5 tbook">
+                <div class="col-sm-5 ">
+                <a href="" > <img style="width: 80%; height: 300px;" src="../../../../assets/img/image.jpg  " alt=""></a>
+                </div>
+                <div class="col-sm-6 book">
+                    <div class="d-flex justify-content-between">
+                       <div  class="w-25 mr-5">Title</div>
+                        
+                       <div class="w-75 text-break">
+                        Hôm nay tôi thất  tình
+                       </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-1">
+                        <div  class="w-25 mr-5">Author</div>
+                        <div class="w-75 text-break">
+                            Hạ Vũ
+                           </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-1">
+                        <div  class="w-25 mr-5">Status</div>
+                        <div class="w-75 text-break">
+                            Còn
+                           </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <a href="" class="text-decoration-none w-25">
+                            <div  class="mr-2">Chi tiết</div> </a>
+                            <div class="w-75 ml-5 text-break">
+                                Xem chi tiết
+                               </div>
+                       </div>
+                </div>
+              
+               </div>
+            </div>
+        </div>
+
+      </section>
+  
+    </div>
+    <nav class=" mt-5">
+        <app-footer></app-footer>
+      </nav>
 </body>
 </html>

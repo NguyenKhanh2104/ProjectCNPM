@@ -1,1 +1,58 @@
-<p>login works!</p>
+
+  <div class="container mt-3">
+  
+        <button type="button" class="btn btn-success px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Login
+        </button>
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <div class="log"><h2 class="modal-title" id="loginModalLabel" >Login</h2></div>
+        <div class="clo">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>       </div>
+      <div class="modal-body">
+        <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmit">
+          <div class="mb-3">
+            <input formControlName="email" [class.is-invalid]="emailField.touched && emailField.invalid" type="email"
+              class="form-control" id="id_email" placeholder="Email">
+            <div *ngIf="emailField.touched && emailField.hasError('required')" class="d-block invalid-feedback">Vui lòng nhập Email</div>
+            <div *ngIf="emailField.touched && emailField.hasError('email')" class="d-block invalid-feedback">Email
+              không hợp lệ</div>
+          </div>
+          <div class="mb-3">
+            <input formControlName="password" [class.is-invalid]="passwordField.touched && passwordField.invalid"
+              type="password" class="form-control" id="id_Password" placeholder="Password">
+            <div *ngIf="passwordField.touched && passwordField.hasError('required')" class="d-block invalid-feedback">
+              Vui lòng nhập mật khẩu</div>
+          </div>
+          <div class="row txt">
+            <div class="col-sm-6 d-flex remember">
+              <div >
+              <input type="checkbox" name="" id="checkbox" class="">
+            </div>
+            <div class="mt-2 ml-2">
+              <a href=""><h3>Remember</h3></a>
+
+            </div>
+             </div>
+            <div class="col-sm-6 mt-2 forgot">
+              <a href=""><h3>Forgot Password</h3></a> </div>
+          </div>
+          <button [disabled]="loginForm.invalid" type="submit" class=" mt-3 btn btn-primary w-100">Submit</button>
+         <div class="or">
+          <h3 >hoặc</h3>
+         </div>
+          <div>  <button class="btn btn-primary w-100"><i class="fa fa-facebook-square"></i> Login with Facebook</button></div>
+        
+          <div>  <button class="mt-3 btn btn-primary w-100"><i class="fa fa-google-plus"></i> Login with Google</button></div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

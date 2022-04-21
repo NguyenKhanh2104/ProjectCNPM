@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookExchangeModule } from './book-exchange/BookExchange.module';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +15,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,BookExchangeModule,RouterModule
+    AppRoutingModule,BookExchangeModule,RouterModule, NgbModule, NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

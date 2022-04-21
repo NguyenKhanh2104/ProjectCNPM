@@ -1,0 +1,24 @@
+
+#page{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#page .modal-content{
+    width: 80%;
+}
+.regis   {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.modal-body form input {
+    border-radius: 15px;
+}
+.gender select {
+    margin-left: 10px;  
+    height: 35px;
+    border-radius: 5px;
+}

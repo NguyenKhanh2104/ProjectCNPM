@@ -1,0 +1,86 @@
+
+    <div class="container mt-3">
+      
+          <button type="button" class="btn btn-success px-4" data-bs-toggle="modal" data-bs-target="#register">
+            Register
+          </button>
+     
+
+    </div>
+  <!-- Modal -->
+  <div class="modal fade" id="register" tabindex="-1" aria-labelledby="registerLable" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" id="page">
+      <div class="modal-content">
+        <div class="modal-header">
+         <div class="regis">
+             <h2 class="modal-title" id="registerLable">Register</h2>
+         </div>     
+         <div class="clos">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>     
+          
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="registerForm" (ngSubmit)="registerFormSubmit" class="row g-4">
+            <div class="col-md-6">
+                <label for="id_firstName" class="form-label">First name</label>
+                <input formControlName="firstName" type="text" class="form-control" id="id_firstName" required>
+                <div *ngIf="firstName.touched && firstName.errors?.required" class="d-block invalid-feedback">Vui lòng nhập họ</div>
+              </div>
+              <div class="col-md-6">
+                <label for="id_lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" formControlName="lastName" id="id_lastName" required>
+                <div *ngIf="lastName.touched && lastName.errors?.required" class="d-block invalid-feedback">Vui lòng nhập tên</div>
+              </div>
+            <div class="col-md-6">
+              <label for="id_email" class="form-label">Email</label>
+              <input formControlName="email" [class.is-invalid]="email.touched && email.invalid" type="email"
+                class="form-control" id="id_email">
+              <div *ngIf="email.invalid && email.touched">
+                <div *ngIf="email.errors?.required" class="d-block invalid-feedback">Vui lòng nhập Email</div>
+                <div *ngIf="email.errors?.email" class="d-block invalid-feedback">Email không hợp lệ</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="id_number" class="form-label">Phone Number</label>
+              <input formControlName="number" [class.is-invalid]="number.touched && number.invalid"
+                type="text" class="form-control" id="id_number">
+              <div *ngIf="number.touched && number.errors?.required" class="d-block invalid-feedback">Không hợp lệ</div>
+            </div>
+          
+            <div class="col-md-6">
+              <label for="id_Password" class="form-label">Password</label>
+              <input formControlName="password" [class.is-invalid]="password.touched && password.invalid"
+                type="password" class="form-control" id="id_Password">
+              <div *ngIf="password.touched && password.errors?.required" class="d-block invalid-feedback">
+               Vui lòng nhập mật khẩu.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="id_Password" class="form-label">Confirm Password</label>
+              <input formControlName="confirm" [class.is-invalid]="confirm.touched && confirm.invalid"
+                type="password" class="form-control" id="id_Password1">
+              <div *ngIf="confirm.touched && confirm.errors?.required" class="d-block invalid-feedback">Vui lòng nhập lại mật khẩu</div>
+            </div>
+            <div class="col-md-6">
+                <label for="id_firstName" class="form-label">Address</label>
+                <input formControlName="firstName" type="text" class="form-control" id="id_firstName" required>
+                <div *ngIf="firstName.touched && firstName.errors?.required" class="d-block invalid-feedback">Vui lòng địa chỉ</div>
+            </div>
+            <div class="col-md-6 gender">
+                <div class="row"> <label for="id_firstName" class="form-label">Gender</label></div>
+               
+                <select name="" id="" class="w-35">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+              </div>
+            <div class="col-md-12 mt-4 d-flex justify-content-center">
+              <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary px-5">Submit</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
